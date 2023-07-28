@@ -107,14 +107,14 @@
   when:
     - docker_compose_latest_svn.stdout is defined
 
-- name: Check if /usr/local/bin/docker-compose exists.
+- name: Check if /usr/bin/docker-compose exists.
   stat:
-    path: /usr/local/bin/docker-compose
+    path: /usr/bin/docker-compose
   register: docker_compose_file
 
 - name: Check current docker-compose version
   shell:
-    cmd: /usr/local/bin/docker-compose --version | cut -d ' ' -f3 | sed 's/.$//'
+    cmd: /usr/bin/docker-compose --version | cut -d ' ' -f3 | sed 's/.$//'
   register: docker_compose_vsn
   changed_when: false
   failed_when: false
@@ -131,7 +131,7 @@
 - name: Install or upgrade docker-compose
   get_url:
     url : "https://github.com/docker/compose/releases/download/{{ docker_compose_latest }}/docker-compose-Linux-x86_64"
-    dest: /usr/local/bin/docker-compose
+    dest: /usr/bin/docker-compose
     mode: 'a+x'
     force: yes
   when: >
