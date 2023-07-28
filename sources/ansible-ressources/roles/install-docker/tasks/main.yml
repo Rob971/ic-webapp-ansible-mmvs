@@ -63,6 +63,12 @@
     creates: /usr/bin/docker
   when: ansible_distribution == "Amazon"
 
+- name: Ensure group "docker" exists with correct gid
+  ansible.builtin.group:
+    name: dockerroot
+    state: present
+    gid: 1750
+    
 - name: Add remote user to docker group
   user:
     name: "{{ ansible_user }}"
