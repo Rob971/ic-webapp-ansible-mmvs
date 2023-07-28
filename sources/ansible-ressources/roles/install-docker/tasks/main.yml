@@ -4,18 +4,18 @@
     name: "*"
     state: latest
 
- - name: Remove docker if installed from CentOS repo
-    yum:
-      name:
-        - docker
-        - docker-client
-        - docker-client-latest
-        - docker-common
-        - docker-latest
-        - docker-latest-logrotate
-        - docker-logrotate
-        - docker-engine
-      state: absent
+- name: Remove docker if installed from CentOS repo
+  yum:
+    name:
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-engine
+    state: absent
 
 - name: Install prerequisites
   yum:
