@@ -4,18 +4,20 @@
     name: "*"
     state: latest
 
-- name: Remove docker if installed from CentOS repo
-  yum:
-    name:
-      - docker
-      - docker-client
-      - docker-client-latest
-      - docker-common
-      - docker-latest
-      - docker-latest-logrotate
-      - docker-logrotate
-      - docker-engine
-    state: absent
+ """
+ - name: Remove docker if installed from CentOS repo
+    yum:
+      name:
+        - docker
+        - docker-client
+        - docker-client-latest
+        - docker-common
+        - docker-latest
+        - docker-latest-logrotate
+        - docker-logrotate
+        - docker-engine
+      state: absent
+"""
 
 - name: Install prerequisites
   yum:
@@ -46,7 +48,6 @@
     url: https://download.docker.com/linux/centos/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
   when: ansible_distribution == "CentOS"
-
 
 - name: Install Docker
   yum:
@@ -97,6 +98,12 @@
   args:
     warn: no
 
+- name: Get version number of latest docker-compose
+  shell:
+    cmd: echo "{{ docker_compose_latest_svn.stdout }}"
+  when:
+    - docker_compose_latest_svn.stdout is defined
+    
 - set_fact:
     docker_compose_latest: "{{ docker_compose_latest_svn.stdout }}"
   when:
