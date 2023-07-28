@@ -7,9 +7,9 @@
     force: false
 
 - name: "Déploiement du docker-compose-odoo.yml"
-#  command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-odoo.yml up -d"
-  shell: "docker-compose version"
+  command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-odoo.yml up -d"
+  #shell: "docker-compose version"
   
-  register: command_output
+  #register: command_output
   
-- debug: var=command_output.stdout_lines
+#- debug: var=command_output.stdout_lines
