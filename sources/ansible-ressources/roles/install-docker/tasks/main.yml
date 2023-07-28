@@ -4,7 +4,6 @@
     name: "*"
     state: latest
 
- """
  - name: Remove docker if installed from CentOS repo
     yum:
       name:
@@ -17,7 +16,6 @@
         - docker-logrotate
         - docker-engine
       state: absent
-"""
 
 - name: Install prerequisites
   yum:
