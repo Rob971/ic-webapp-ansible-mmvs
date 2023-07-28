@@ -7,4 +7,5 @@
     force: false
 
 - name: "Déploiement du docker-compose-odoo.yml"
-  command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-odoo.yml up -d"
+  command: "ls -l /home/{{ ansible_user }}/docker-compose-odoo.yml"
+  #command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-odoo.yml up -d"
