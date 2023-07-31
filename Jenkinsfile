@@ -1,4 +1,4 @@
-@Library('mmvsapp-slack-share-library')_
+@Library('sharedLibrary')_
 
 
 pipeline {
