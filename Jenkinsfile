@@ -1,11 +1,11 @@
-@Library('chocoapp-slack-share-library')_
+@Library('mmvsapp-slack-share-library')_
 
 
 pipeline {
     environment {
         IMAGE_NAME = "ic-webapp"
         APP_CONTAINER_PORT = "8080"
-        DOCKERHUB_ID = "choco1992"
+        DOCKERHUB_ID = "rcornano"
         DOCKERHUB_PASSWORD = credentials('dockerhub_password')
     }
     agent none
