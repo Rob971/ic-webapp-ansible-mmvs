@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket                  = "terraform-backend-ulrich"
-    key                     = "ulrich-dev.tfstate"
+    bucket                  = "terraform-backend-mmvs"
+    key                     = "mmvs-dev.tfstate"
     region                  = "us-east-1"
   }
 }
