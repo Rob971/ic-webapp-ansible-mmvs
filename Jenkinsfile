@@ -94,7 +94,7 @@ pipeline {
                   cp $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
-                  terraform init
+                  terraform init -backend-config="access_key=$AWS_ACCESS_KEY_ID" -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY" -backend-config="region=us-east-1" 
                   #terraform destroy --auto-approve
                   terraform plan
                   terraform apply --auto-approve
