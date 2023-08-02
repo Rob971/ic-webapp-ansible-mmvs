@@ -176,7 +176,7 @@ En plus des paramètres et tokens utilisé à la partie CI, on aura aussi besoin
 |       slack          | secret text      |      N/A        |   Token channel slack        |
 |  aws_access_key_id   | secret text      |      N/A        |       access key aws         |
 | aws_secret_access_key| secret text      |      N/A        |       secret key aws         |
-|  private_aws_key     | secret file      |      N/A        |   Clés privé  tito       |
+|  private_aws_key     | secret file      |      N/A        |   Clés privé  ec2-user       |
 
 
 ##### Shared Library

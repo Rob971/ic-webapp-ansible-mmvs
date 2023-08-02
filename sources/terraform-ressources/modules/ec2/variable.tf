@@ -40,5 +40,5 @@ variable "AZ" {
 
 variable "user" {
   type    = string
-  default = "tito"
+  default = "ec2-user"
 }
