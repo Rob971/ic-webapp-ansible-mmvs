@@ -94,9 +94,7 @@ pipeline {
                   cp $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
-                  #export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-                  #export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-                  terraform init
+                  terraform init -migrate-state
                   terraform destroy --auto-approve
                   terraform plan
                   terraform apply --auto-approve
