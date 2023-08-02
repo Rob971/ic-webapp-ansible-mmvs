@@ -97,7 +97,7 @@ pipeline {
                   #export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
                   #export AWS_SECRET_ACCESS_KEY=$AWS_ACCESS_KEY_SECRET
                   terraform init
-                  #terraform destroy --auto-approve
+                  terraform destroy --auto-approve
                   terraform plan
                   terraform apply --auto-approve
                   terraform show
@@ -122,7 +122,7 @@ pipeline {
                   echo "Generating vault key"
                   echo -e $VAULT_KEY > vault.key
                   echo "Generating private key"
-                  cp $PRIVATE_KEY  id_rsa
+                  cp -v $PRIVATE_KEY id_rsa
                   chmod 400 id_rsa vault.key
                   #echo "Generating public key"
                   #echo -e $PUBLIC_KEY > id_rsa.pub
