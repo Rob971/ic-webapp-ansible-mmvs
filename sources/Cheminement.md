@@ -145,16 +145,16 @@ Une fois terminé, il faut tester le fonctionnel sur le navigateur
 
 #### Mise en place de la CD dans le Pipeline
 Ici On a deux pipelines : 
-1. Le tag [v2.0](https://github.com/ulrichmonji/ic-webapp/blob/v2.0/Jenkinsfile)
+1. Le tag [v2.0](https://github.com/titomonji/ic-webapp/blob/v2.0/Jenkinsfile)
 
 Il déploie uniquement sur des VMs virtualbox (la PROD). C'est le plus simple
 
-2. Le tag [v3.0](https://github.com/ulrichmonji/ic-webapp/blob/v3.0/Jenkinsfile)
+2. Le tag [v3.0](https://github.com/titomonji/ic-webapp/blob/v3.0/Jenkinsfile)
 
 Il déploie sur un environnement de test (la DEV) provisionné sur une Machine AWS avant de déployer en PROD sur des VM virtualbox
 
 #### Prérequis
-- Créer un bucket S3 en région Virginie du nord (nommé **terraform-backend-ulrich** pour moi)
+- Créer un bucket S3 en région Virginie du nord (nommé **terraform-backend-tito** pour moi)
 - S'assurer de la présence du VPC par défaut en région Virginie du Nord, ainsi que son Network et Security Group par default.
 -- Si votre VPC par défaut est absent, l'équipe Eazytraining pourra vous fournir un script permettant de le recréer facilement
 - Générer des credentials dans AWS (access_key et secret_key)
@@ -180,7 +180,7 @@ En plus des paramètres et tokens utilisé à la partie CI, on aura aussi besoin
 
 
 ##### Shared Library
-Le pipeline utilise une librairie partagée nommée [ulrich-shared-library](https://github.com/ulrichmonji/sharedLibrary.git).
+Le pipeline utilise une librairie partagée nommée [tito-shared-library](https://github.com/titomonji/sharedLibrary.git).
 
 ##### Slack
 - Channel à utiliser  : **Channel** : #test_notif_jenkins
