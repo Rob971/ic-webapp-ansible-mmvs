@@ -88,18 +88,19 @@ pipeline {
                   mkdir -p ~/.aws
                   echo "[default]" > ~/.aws/credentials
                   echo -e "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/credentials
-                  echo -e "aws_access_key_secret=$AWS_ACCESS_KEY_SECRET" >> ~/.aws/credentials
+                  echo -e "aws_secret_access_key=$AWS_ACCESS_KEY_SECRET" >> ~/.aws/credentials
                   chmod 400 ~/.aws/credentials
                   echo "Generating aws private key"
                   cp $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
-                  export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-                  export AWS_SECRET_ACCESS_KEY=$AWS_ACCESS_KEY_SECRET
+                  #export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+                  #export AWS_SECRET_ACCESS_KEY=$AWS_ACCESS_KEY_SECRET
                   terraform init
                   #terraform destroy --auto-approve
                   terraform plan
                   terraform apply --auto-approve
+                  terraform show
                '''
              }
           }
