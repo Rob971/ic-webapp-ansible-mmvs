@@ -94,7 +94,7 @@ pipeline {
                   cp $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
-                  terraform init -migrate-state
+                  terraform init -reconfigure
                   terraform destroy --auto-approve
                   terraform plan
                   terraform apply --auto-approve
