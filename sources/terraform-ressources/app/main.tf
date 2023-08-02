@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket                  = "terraform-backend-mmvs"
+    bucket                  = "terraform-backend-tito"
     key                     = "tito-dev.tfstate"
     region                  = "us-east-1"
   }
