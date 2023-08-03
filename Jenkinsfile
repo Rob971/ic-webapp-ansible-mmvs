@@ -94,6 +94,7 @@ pipeline {
                   cp $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
+                  terraform destroy --auto-approve
                   terraform init
                   #terraform destroy --auto-approve
                   terraform plan
