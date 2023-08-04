@@ -32,10 +32,10 @@
   
 - name: download pip script
   get_url:
-    url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
+    url: https://bootstrap.pypa.io/get-pip.py
     dest: /tmp/get-pip.py
 - name: install python-pip
-  command: python3 /tmp/get-pip.py
+  command: python3 /tmp/get-pip.py --user
   ignore_errors: yes
 
 - name: Install docker python
