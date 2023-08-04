@@ -40,7 +40,7 @@
   command: python3 /tmp/get-pip.py --user
   ignore_errors: yes
 - name: check python3-pip installation
-  command: ls -la /usr/local/bin/pytho*
+  command: ls -la /usr/local/bin/
   ignore_errors: yes
 - name: Install docker python
   pip:
