@@ -1,11 +1,11 @@
 ---
 - name: Update System
-  yum:
+  package:
     name: "*"
     state: latest
 
 - name: Remove docker if installed from CentOS repo
-  yum:
+  package:
     name:
       - docker
       - docker-client
@@ -18,7 +18,7 @@
     state: absent
 
 - name: Install prerequisites
-  yum:
+  package:
     name: "{{ item }}"
     state: present
   with_items:
@@ -33,9 +33,11 @@
   get_url:
     url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
     dest: /tmp/get-pip.py
+
 - name: install python-pip
   command: python3 /tmp/get-pip.py
   ignore_errors: yes
+  
 - name: Install docker python
   pip:
     name: docker-py
@@ -48,7 +50,7 @@
   when: ansible_distribution == "CentOS"
 
 - name: Install Docker
-  yum:
+  package:
     name:
       - docker-ce
       - docker-ce-cli
