@@ -26,13 +26,15 @@
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
-    - python3
+    - python3.9
     - python3-pip
+    - virtualenv
+    - python3-setuptools
   when: ansible_distribution == "CentOS"
   
 - name: download pip script
   get_url:
-    url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
+    url: https://bootstrap.pypa.io/pip/get-pip.py
     dest: /tmp/get-pip.py
 - name: install python3-pip
   command: python3 /tmp/get-pip.py --user
