@@ -35,10 +35,10 @@
   
 - name: download pip script
   get_url:
-    url: https://bootstrap.pypa.io/pip/get-pip.py
+    url: https://bootstrap.pypa.io/get-pip.py
     dest: /tmp/get-pip.py
-- name: install python3-pip
-  command: python3 /tmp/get-pip.py --user
+- name: install python3
+  command: python3.9 /tmp/get-pip.py --upgrade --user
   ignore_errors: yes
 - name: check python3-pip installation
   command: ls -la /usr/local/bin/
