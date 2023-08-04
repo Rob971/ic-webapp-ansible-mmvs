@@ -20,7 +20,8 @@
 - name: Install prerequisites
   package:
     name: "{{ item }}"
-    state: present
+    update_cache: yes
+    state: latest
   with_items:
     - yum-utils
     - device-mapper-persistent-data
@@ -33,15 +34,14 @@
   get_url:
     url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
     dest: /tmp/get-pip.py
-
 - name: install python-pip
   command: python3 /tmp/get-pip.py
   ignore_errors: yes
-  
+
 - name: Install docker python
   pip:
     name: docker-py
-    executable: /usr/local/bin/pip3
+    executable: /usr/local/bin/python3-pip
 
 - name: Add Docker repo
   get_url:
