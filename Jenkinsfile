@@ -91,7 +91,7 @@ pipeline {
                   echo -e "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
                   chmod 400 ~/.aws/credentials
                   echo "Generating aws private key"
-                  cp $PRIVATE_AWS_KEY devops.pem
+                  cp -v $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
                   terraform init -reconfigure
@@ -160,7 +160,7 @@ pipeline {
                                 apt update -y
                                 apt install sshpass -y                            
                                 export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
-                                cp $PRIVATE_AWS_KEY devops.pem
+                                cp -v $PRIVATE_AWS_KEY devops.pem
                                 chmod 400 devops.pem
                                 ls -la devops.pem
                                 ansible dev -m ping  --private-key devops.pem  -o 
