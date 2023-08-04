@@ -24,6 +24,7 @@
     state: latest
   with_items:
     - yum-utils
+    - epel-release
     - device-mapper-persistent-data
     - lvm2
     - python3.9
