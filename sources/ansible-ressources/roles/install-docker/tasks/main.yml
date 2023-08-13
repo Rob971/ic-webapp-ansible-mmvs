@@ -27,7 +27,7 @@
     - epel-release
     - device-mapper-persistent-data
     - lvm2
-    - python36
+    - python37
     - python3-pip
     - virtualenv
     - python3-setuptools
@@ -46,7 +46,7 @@
 - name: Install docker python
   pip:
     name: docker-py
-    executable: /usr/local/bin/pip3
+    executable: /usr/local/bin/pip
 
 - name: Add Docker repo
   get_url:
