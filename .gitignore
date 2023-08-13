@@ -17,3 +17,4 @@ shared
 crash.log
 crash.*.log
 
+.DS_Store

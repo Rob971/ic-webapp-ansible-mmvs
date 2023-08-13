@@ -27,7 +27,7 @@
     - epel-release
     - device-mapper-persistent-data
     - lvm2
-    - python3.9
+    - python36
     - python3-pip
     - virtualenv
     - python3-setuptools
@@ -38,7 +38,7 @@
     url: https://bootstrap.pypa.io/get-pip.py
     dest: /tmp/get-pip.py
 - name: install python3
-  command: python3.9 /tmp/get-pip.py --upgrade --user
+  command: python3 /tmp/get-pip.py --upgrade --user
   ignore_errors: yes
 - name: check python3-pip installation
   command: ls -la /usr/local/bin/
@@ -46,7 +46,7 @@
 - name: Install docker python
   pip:
     name: docker-py
-    executable: /usr/local/bin/python3-pip
+    executable: /usr/local/bin/pip3
 
 - name: Add Docker repo
   get_url:
