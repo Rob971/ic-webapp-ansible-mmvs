@@ -160,6 +160,7 @@ pipeline {
                                 apt update -y
                                 apt install sshpass -y                            
                                 export ANSIBLE_CONFIG=$(pwd)/sources/ansible-ressources/ansible.cfg
+                                chmod 400 devops.pem
                                 ansible dev -m ping  --private-key devops.pem  -o 
                             '''
                         }
