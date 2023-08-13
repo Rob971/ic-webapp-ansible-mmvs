@@ -27,7 +27,7 @@
     - epel-release
     - device-mapper-persistent-data
     - lvm2
-    - python3-distutils
+    - python3.10-distutils
     - python3-pip
     - virtualenv
     - python3-setuptools
