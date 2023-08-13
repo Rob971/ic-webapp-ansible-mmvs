@@ -34,7 +34,7 @@
   when: ansible_distribution == "CentOS"
   
 - name: install python3
-  command: python -m ensurepip --upgrade
+  command: python3 -m ensurepip --upgrade
 - name: Install docker python
   pip:
     name: docker-py
