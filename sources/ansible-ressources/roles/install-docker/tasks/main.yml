@@ -33,20 +33,11 @@
     - python3-setuptools
   when: ansible_distribution == "CentOS"
   
-- name: download pip script
-  get_url:
-    url: https://bootstrap.pypa.io/pip/3.6/get-pip.py
-    dest: /tmp/get-pip.py
 - name: install python3
-  command: python3 /tmp/get-pip.py --upgrade --user
-  ignore_errors: yes
-- name: check python3-pip installation
-  command: ls -la /usr/local/bin/
-  ignore_errors: yes
+  command: python3 -m ensurepip --upgrade
 - name: Install docker python
   pip:
     name: docker-py
-    executable: /usr/local/bin/pip
 
 - name: Add Docker repo
   get_url:
