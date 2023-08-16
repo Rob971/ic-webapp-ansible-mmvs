@@ -1,4 +1,4 @@
-FROM python-docker:latest
+FROM python:3.10.12
 LABEL maintainer="TITO"
 WORKDIR /opt
 RUN  pip install flask
