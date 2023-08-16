@@ -1,5 +1,5 @@
-FROM python:3.6-alpine
-LABEL maintainer="TITO MONJI"
+FROM python-docker:latest
+LABEL maintainer="TITO"
 WORKDIR /opt
 RUN  pip install flask
 ADD . /opt/
