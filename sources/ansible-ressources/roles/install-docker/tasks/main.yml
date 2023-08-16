@@ -33,6 +33,17 @@
     - python3-setuptools
   when: ansible_distribution == "CentOS"
 
+
+- name: install python 3.10 
+  get_url:
+    url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
+    dest: /tmp/Python-3.10.2.tgz 
+- name: decompress python 3.10 
+  command: tar zxvf Python-3.10.2.tgz
+- name: build python 3.10 library
+  command: cd Python-3.10.2/ && ./configure && make && sudo make altinstall
+- name: verify python 3.10 installation
+  command: python3.10 --version
 - name: download pip script
   get_url:
     url: https://bootstrap.pypa.io/get-pip.py
