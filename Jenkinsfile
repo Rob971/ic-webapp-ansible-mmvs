@@ -94,6 +94,7 @@ pipeline {
                   cp -v $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
+                  apt-get install systemd
                   timedatectl --adjust-system-clock
                   terraform init -reconfigure
                   terraform destroy --auto-approve
