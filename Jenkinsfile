@@ -12,6 +12,7 @@ pipeline {
     }
     agent none
     stages {
+        /**
        stage('Build image') {
            agent any
            steps {
@@ -67,7 +68,7 @@ pipeline {
              }
           }
        }
-
+**/
         stage ('Build EC2 on AWS with terraform') {
           agent { 
                     docker { 
@@ -94,7 +95,7 @@ pipeline {
                   cp -v $PRIVATE_AWS_KEY devops.pem
                   chmod 400 devops.pem
                   cd "./sources/terraform-ressources/app"
-                  apt-get install systemd
+                  yum install systemd
                   timedatectl --adjust-system-clock
                   terraform init -reconfigure
                   terraform destroy --auto-approve
