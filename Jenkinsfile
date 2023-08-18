@@ -12,7 +12,8 @@ pipeline {
     }
     agent none
     stages {
-        /**
+        /** 
+**/
        stage('Build image') {
            agent any
            steps {
@@ -56,8 +57,7 @@ pipeline {
              }
           }
        } 
-       
-**/
+      
 
        stage ('Login and Push Image on docker hub') {
           agent any
