@@ -55,7 +55,9 @@ pipeline {
                '''
              }
           }
-       }
+       } 
+       
+**/
 
        stage ('Login and Push Image on docker hub') {
           agent any
@@ -68,7 +70,6 @@ pipeline {
              }
           }
        }
-**/
         stage ('Build EC2 on AWS with terraform') {
           agent { 
                     docker { 
