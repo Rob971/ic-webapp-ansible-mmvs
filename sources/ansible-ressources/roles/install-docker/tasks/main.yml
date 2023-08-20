@@ -38,7 +38,7 @@
     url: https://www.python.org/ftp/python/3.10.2/Python-3.10.2.tgz
     dest: /tmp/Python-3.10.2.tgz 
 - name: decompress python 3.10 
-  command: tar zxvf Python-3.10.2.tgz
+  command: unarchive Python-3.10.2.tgz
 - name: build python 3.10 library
   command: cd Python-3.10.2/ && ./configure && make && sudo make altinstall
 - name: verify python 3.10 installation
