@@ -70,6 +70,7 @@ pipeline {
              }
           }
        }
+       /* 
         stage ('Build EC2 on AWS with terraform') {
           agent { 
                     docker { 
@@ -251,7 +252,7 @@ pipeline {
             }
         }  
         stage ("Deploy in PRODUCTION") {
-            /* when { expression { GIT_BRANCH == 'origin/prod'} } */
+            // when { expression { GIT_BRANCH == 'origin/prod'} } 
             agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }                     
             stages {
                 stage ("PRODUCTION - Ping target hosts") {
@@ -314,7 +315,7 @@ pipeline {
                     }
                 }
             }
-        } 
+        }  */
     }  
 
     post {
