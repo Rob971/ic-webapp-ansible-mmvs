@@ -2,7 +2,7 @@ version: '3.3'
 services:
     pgadmin:
         container_name: pgadmin
-        image: hub.docker.com/r/dpage/pgadmin4/
+        image: https://hub.docker.com/r/dpage/pgadmin4/
         networks:
             - ic_network_pgadmin
         environment:
