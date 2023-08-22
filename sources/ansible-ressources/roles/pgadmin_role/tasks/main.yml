@@ -5,13 +5,6 @@
 # - name: "Deletion du fichier de conf initial de pgadmin "
 #   command: rm -rf /home/{{ ansible_user }}/servers.json
 
-- name: "Update CentOS Repositories "
-  command: yum -y update
-- name: "Enable the ELRepo Repository "
-  command: rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-- name: "install the ELRepo repository "
-  command: rpm -Uvh https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
-
 - name: "Generation du docker-compose file"
   template:
     src: "docker-compose-pgadmin.yml.j2"
