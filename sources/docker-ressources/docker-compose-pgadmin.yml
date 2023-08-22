@@ -2,7 +2,7 @@ version: '3.3'
 services:
     pgadmin:
         container_name: pgadmin
-        image: dpage/pgadmin4
+        image: dpage/pgadmin4:latest
         networks:
             - ic_network_pgadmin
         environment:
