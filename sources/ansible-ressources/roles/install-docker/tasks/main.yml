@@ -83,6 +83,5 @@
   get_url:
     url: https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-x86_64
     dest: /usr/bin/docker-compose
-    state: present 
     mode: 0755   
  
