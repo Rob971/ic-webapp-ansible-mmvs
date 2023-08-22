@@ -76,9 +76,7 @@
 #     enabled: yes
 
 - name: Uninstall docker-compose
-  command: 
-    value: rm -rf $(which docker-compose)
-    state: absent
+  command: rm -rf $(which docker-compose)
 
 
 - name: Install docker-compose
