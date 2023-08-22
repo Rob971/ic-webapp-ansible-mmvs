@@ -17,8 +17,8 @@
 
 
 
-- name: "Generation du docker-compose file"
+- name: "Deletion du docker-compose file"
   command: rm -rf /home/{{ ansible_user }}/docker-compose-pgadmin.yml
 
-- name: "Generation du fichier de conf initial de pgadmin "
+- name: "Deletion du fichier de conf initial de pgadmin "
   command: rm -rf /home/{{ ansible_user }}/servers.json
