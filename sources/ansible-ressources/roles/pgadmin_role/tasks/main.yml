@@ -1,10 +1,8 @@
 ---
 - name: "Deletion du docker-compose file"
-  state: absent 
   command: rm -rf /home/{{ ansible_user }}/docker-compose-pgadmin.yml
 
 - name: "Deletion du fichier de conf initial de pgadmin "
-  state: absent 
   command: rm -rf /home/{{ ansible_user }}/servers.json
 
 - name: "Generation du docker-compose file"
