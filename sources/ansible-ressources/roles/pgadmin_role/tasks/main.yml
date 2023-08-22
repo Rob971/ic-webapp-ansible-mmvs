@@ -1,24 +1,26 @@
 ---
-# - name: "Generation du docker-compose file"
-#   template:
-#     src: "docker-compose-pgadmin.yml.j2"
-#     dest: /home/{{ ansible_user }}/docker-compose-pgadmin.yml
-#     mode: 0655
-
-# - name: "Generation du fichier de conf initial de pgadmin "
-#   template:
-#     src: "servers.json.j2"
-#     dest: /home/{{ ansible_user }}/servers.json
-#     mode: 0655
-
-# - name: "Déploiement du docker-compose-pgadmin.yml"
-#   command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-pgadmin.yml up -d"
-
-
-
-
 - name: "Deletion du docker-compose file"
+  state: absent 
   command: rm -rf /home/{{ ansible_user }}/docker-compose-pgadmin.yml
 
 - name: "Deletion du fichier de conf initial de pgadmin "
+  state: absent 
   command: rm -rf /home/{{ ansible_user }}/servers.json
+
+- name: "Generation du docker-compose file"
+  template:
+    src: "docker-compose-pgadmin.yml.j2"
+    dest: /home/{{ ansible_user }}/docker-compose-pgadmin.yml
+    mode: 0655
+
+- name: "Generation du fichier de conf initial de pgadmin "
+  template:
+    src: "servers.json.j2"
+    dest: /home/{{ ansible_user }}/servers.json
+    mode: 0655
+
+- name: "Déploiement du docker-compose-pgadmin.yml"
+  command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-pgadmin.yml up -d"
+
+
+
