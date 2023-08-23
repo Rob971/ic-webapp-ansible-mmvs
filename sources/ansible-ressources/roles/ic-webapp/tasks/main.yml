@@ -14,3 +14,4 @@
       PGADMIN_URL: "{{ pgadmin_url }}"
     networks:
       - name: "{{ ic_webapp_network }}"
+    recreate: yes
