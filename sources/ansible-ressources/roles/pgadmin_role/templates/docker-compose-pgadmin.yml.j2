@@ -2,7 +2,7 @@ version: '3.8'
 services:
     {{ pgadmin_service_name }}:
         container_name: {{ pgadmin_container_name }}
-        image: dpage/pgadmin4:5.5
+        image: dpage/pgadmin4
         networks:
             - {{ pgadmin_network }}
         environment:
