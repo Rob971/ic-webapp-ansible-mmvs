@@ -1,10 +1,4 @@
 ---
-# - name: "Deletion du docker-compose file"
-#   command: rm -rf /home/{{ ansible_user }}/docker-compose-pgadmin.yml
-
-# - name: "Deletion du fichier de conf initial de pgadmin "
-#   command: rm -rf /home/{{ ansible_user }}/servers.json
-
 - name: "Generation du docker-compose file"
   template:
     src: "docker-compose-pgadmin.yml.j2"
@@ -19,6 +13,3 @@
 
 - name: "Déploiement du docker-compose-pgadmin.yml"
   command: "docker-compose -f /home/{{ ansible_user }}/docker-compose-pgadmin.yml up -d"
-
-
-
